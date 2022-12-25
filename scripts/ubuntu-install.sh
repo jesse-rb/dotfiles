@@ -11,8 +11,13 @@ chsh -s $(which zsh)
 # install oh-my-zsh framework for some nice plugins
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-# install and setup power level 10k oh-my-zsh theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k # clone p10k repo
+mv .zshrc.pre-oh-my-zsh .zshrc # restore original .zshrc
+
+# download and setup power level 10k oh-my-zsh theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/nice-zsh-stuff/powerlevel10k # clone p10k repo
+
+# download fish-like zsh syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/nice-zsh-stuff/zsh-syntax-highlighting
 
 # install nvm for node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
