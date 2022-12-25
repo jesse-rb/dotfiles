@@ -20,6 +20,10 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 # install rbenv and ruby, to be able to install ruby gems
 sudo apt install rbenv
 
+# install golang
+
+# install pyenv
+
 # install colorls cmd make pretty
 
 # install z cmd utility
