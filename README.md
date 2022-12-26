@@ -1,6 +1,9 @@
 # Dotfiles
 
-## start by
+## setup steps
+
+**get files local**
+
 Assuming we are in our user's home directory
 ```
 cd ~
@@ -21,7 +24,17 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 git checkout
 ```
 
+**install basics**
+
 4. run install script corresponding to your os, e.g. if on ubuntu then run 
 ```
 run bash ~/scripts/ubuntu-install.sh
+```
+
+**complete neovim setup**
+
+5. open neovim, then inside neovim, run the :PackerInstall command to isntall neovim plugins
+```
+nvim
+:PackerInstall
 ```
