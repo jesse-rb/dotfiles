@@ -9,7 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
 
   -- packer: nvum lua package manager
-  use 'wbthomason/packer.nvim' 
+  use 'wbthomason/packer.nvim'
 
   -- LSP Configuration & Plugins
   use {
@@ -56,15 +56,29 @@ packer.startup(function(use)
   -- fuzzy finder algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+  -- nvim tree: sidebar tree that looks like vscode
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
+  -- toggleterm: terminal popup
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 
-  -- material: theme
-  use 'marko-cerovac/material.nvim'
 
   -- lualine: repo status line on bottom of screen
   use {
    'nvim-lualine/lualine.nvim',
    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  
+
+  -- material: theme
+  use 'marko-cerovac/material.nvim'
+
+  -- bufferline: make buffers looks nice vscody
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
 end)
