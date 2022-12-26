@@ -2,7 +2,7 @@
 
 ## setup steps
 
-**get files local**
+**get files locally**
 
 Assuming we are in our user's home directory
 ```
@@ -23,6 +23,8 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 git checkout
 ```
+
+At this point all dotfiles should already be in place :D, no need to `mv` or `cp` things around (hopefully?)
 
 **install basics**
 
