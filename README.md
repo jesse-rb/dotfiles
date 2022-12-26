@@ -1,11 +1,8 @@
 # Dotfiles
 
 ## start by
-0. Assuming the current working directory is your user's home directorey
-`cd ~`
-
 1. cloning repo
-`git clone --bare https://github.com/jesse-rb/dotfiles.git .dotfiles`
+`git clone --bare https://github.com/jesse-rb/dotfiles.git ~/.dotfiles`
 
 2. for now, set alias to checkout repo, this line is also present in `.zshrc` for later
 `alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`

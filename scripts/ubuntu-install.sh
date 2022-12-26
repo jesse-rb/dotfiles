@@ -19,6 +19,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/nice-zsh-
 # download fish-like zsh syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/nice-zsh-stuff/zsh-syntax-highlighting
 
+# download neovim appimage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+
 # install nvm for node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 

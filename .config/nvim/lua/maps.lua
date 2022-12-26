@@ -1,5 +1,9 @@
 local keymap = vim.keymap
 
+-- leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- do not yank with x
 keymap.set('n', 'x', '"_x')
 
@@ -31,3 +35,10 @@ keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>-')
 keymap.set('n', '<C-w><down>', '<C-w>+')
+
+-- telescope
+local telescope = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
+vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
+vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
+vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
