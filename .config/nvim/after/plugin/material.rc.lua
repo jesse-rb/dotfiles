@@ -31,10 +31,10 @@ require('material').setup({
         -- "neogit",
         -- "nvim-cmp",
         -- "nvim-navic",
-        -- "nvim-tree",
-        -- "nvim-web-devicons",
+        "nvim-tree",
+        "nvim-web-devicons",
         -- "sneak",
-        -- "telescope",
+        "telescope",
         -- "trouble",
         -- "which-key",
     },
@@ -61,5 +61,6 @@ require('material').setup({
     custom_highlights = {}, -- Overwrite highlights with your own
 })
 
+vim.o.termguicolors = true
 vim.g.material_style = "palenight"
-vim.cmd 'colorscheme material'
+vim.cmd [[colorscheme material]]
