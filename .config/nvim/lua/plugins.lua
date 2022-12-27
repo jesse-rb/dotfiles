@@ -47,6 +47,12 @@ packer.startup(function(use)
     after = 'nvim-treesitter'
   }
 
+  -- autopair: auto pair that supports multiple characters
+  use {
+  	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
   -- comment selections
   use 'numToStr/Comment.nvim'
 
