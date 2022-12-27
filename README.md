@@ -24,19 +24,16 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 git checkout
 ```
 
+4. hide untracked files for dotfiles bare repo
+```
+git config --local status.showUntrackedFiles no
+```
+
 At this point all dotfiles should already be in place :D, no need to `mv` or `cp` things around (hopefully?)
 
 **install basics**
 
-4. run install script corresponding to your os, e.g. if on ubuntu then run 
+5. run install script corresponding to your os, e.g. if on ubuntu then run 
 ```
 run bash ~/scripts/ubuntu-install.sh
-```
-
-**complete neovim setup**
-
-5. open neovim, then inside neovim, run the :PackerInstall command to isntall neovim plugins
-```
-nvim
-:PackerInstall
 ```
