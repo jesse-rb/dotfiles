@@ -30,7 +30,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -47,21 +46,43 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # syntax highlighting
 source ~/nice-zsh-stuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# command not found suggestions
-source /etc/zsh_command_not_found
+if [[ $OSTYPE == "linux"* ]]
+then
+  # command not found suggestions
+  source /etc/zsh_command_not_found
+fi
 
 # z cmd utility
-source ~/z/z.sh
+if [[ $OSTYPE == "linux"* ]] then
+  PATH_TO_Z="$HOME/z/z.sh"
+elif [[ $OSTYPE =~ "darwin"* ]] then
+  PATH_TO_Z="/opt/homebrew/etc/profile.d/z.sh"
+fi
+source $PATH_TO_Z
+
 
 # rbenv and ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+eval "$(rbenv init - zsh)"
+if [[ $OSTYPE == "linux"* ]] then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+fi
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # load nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # load nvm bash_completion
+if [[ $OSTYPE == "linux"* ]] then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # load nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # load nvm bash_completion
+elif [[ $OSTYPE == "darwin"* ]] then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+# pyenv
+eval "$(pyenv init - zsh)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
