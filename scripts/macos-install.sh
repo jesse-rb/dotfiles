@@ -34,14 +34,11 @@ rbenv init
 rbenv install 3.1.3
 rbenv global 3.1.3
 
-# install golang
-
 # install pyenv
 brew install pyenv
-
 
 # install colorls ruby gem
 gem install colorls
 
-# install z cmd utility
+# install rupa/z cmd utility
 brew install z

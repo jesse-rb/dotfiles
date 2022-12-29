@@ -10,7 +10,6 @@ chsh -s $(which zsh)
 
 # install oh-my-zsh framework for some nice plugins
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
 mv .zshrc.pre-oh-my-zsh .zshrc # restore original .zshrc
 
 # download and setup power level 10k oh-my-zsh theme
@@ -29,11 +28,15 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # install rbenv and ruby, to be able to install ruby gems
 sudo apt install rbenv
-
-# install golang
+rbenv init
+rbenv install 3.1.3
+rbenv global 3.1.3
 
 # install pyenv
+curl https://pyenv.run | bash
 
 # install colorls cmd make pretty
+gem install colorls
 
-# install z cmd utility
+# clone rupa/z cmd utility
+git clone https://github.com/rupa/z.git
