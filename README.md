@@ -21,12 +21,12 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 3. checkout main branch
 ```
-git checkout
+dotfiles checkout
 ```
 
 4. hide untracked files for dotfiles bare repo
 ```
-git config --local status.showUntrackedFiles no
+dotfiles config --local status.showUntrackedFiles no
 ```
 
 At this point all dotfiles should already be in place :D, no need to `mv` or `cp` things around (hopefully?)

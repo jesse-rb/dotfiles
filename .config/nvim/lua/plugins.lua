@@ -54,10 +54,7 @@ return require('packer').startup(function(use)
   }
 
   -- autopair: auto pair that supports multiple characters
-  use {
-  	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
+  use 'windwp/nvim-autopairs'
 
   -- comment selections
   use 'numToStr/Comment.nvim'
@@ -79,7 +76,6 @@ return require('packer').startup(function(use)
 
   -- toggleterm: terminal popup
   use {"akinsho/toggleterm.nvim", tag = '*'}
-
 
   -- lualine: repo status line on bottom of screen
   use {
