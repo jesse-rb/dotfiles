@@ -21,6 +21,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/nice-zsh-
 # download fish-like zsh syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/nice-zsh-stuff/zsh-syntax-highlighting
 
+# install ripgrep (used by telescope nvim plugin)
+brew install ripgrep
+
 # install neovim appimage
 brew install neovim
 
