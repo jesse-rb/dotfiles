@@ -1,4 +1,4 @@
-# Dotfiles
+# dotfiles
 
 ## setup steps
 
@@ -37,3 +37,9 @@ At this point all dotfiles should already be in place :D, no need to `mv` or `cp
 ```
 run bash ~/scripts/ubuntu-install.sh
 ```
+
+## previews
+
+![image preview](./static/preview.png)
+
+![image preview nvim](./static/preview_nvim.png)
