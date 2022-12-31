@@ -17,6 +17,11 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- new tab 
 keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
 
+-- buffers
+keymap.set('n', '<leader>]', ':bnext<CR>', { silent = true })
+keymap.set('n', '<leader>[', ':bprevious<CR>', { silent = true })
+keymap.set('n', '<leader>w', ':bd<CR>', { silent = true })
+
 -- split window
 keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
