@@ -33,8 +33,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 # install rbenv and ruby, to be able to install ruby gems
 sudo apt install rbenv
 rbenv init
-rbenv install 3.1.3
-rbenv global 3.1.3
+rbenv install 3.0.2
+rbenv global 3.0.2
 
 # install pyenv
 curl https://pyenv.run | bash

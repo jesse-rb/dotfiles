@@ -62,11 +62,9 @@ source $PATH_TO_Z
 
 
 # rbenv and ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 eval "$(rbenv init - zsh)"
-if [[ $OSTYPE == "linux"* ]] then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-fi
 
 # nvm
 if [[ $OSTYPE == "linux"* ]] then
@@ -80,9 +78,9 @@ elif [[ $OSTYPE == "darwin"* ]] then
 fi
 
 # pyenv
-eval "$(pyenv init - zsh)"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
