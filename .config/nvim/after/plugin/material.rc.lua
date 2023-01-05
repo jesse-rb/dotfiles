@@ -23,7 +23,7 @@ require('material').setup({
         -- Available plugins:
         -- "dap",
         -- "dashboard",
-        -- "gitsigns",
+        "gitsigns",
         -- "hop",
         -- "indent-blankline",
         -- "lspsaga",

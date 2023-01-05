@@ -14,9 +14,6 @@ keymap.set('n', '-', '<C-x>')
 -- select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- new tab 
-keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
-
 -- buffers
 keymap.set('n', '<leader>]', ':bnext<CR>', { silent = true })
 keymap.set('n', '<leader>[', ':bprevious<CR>', { silent = true })

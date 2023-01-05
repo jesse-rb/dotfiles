@@ -74,6 +74,9 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  -- gitsigns: show git signs in editor
+  use 'lewis6991/gitsigns.nvim'
+
   -- toggleterm: terminal popup
   use {"akinsho/toggleterm.nvim", tag = '*'}
 
