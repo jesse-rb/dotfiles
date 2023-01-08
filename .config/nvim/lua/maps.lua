@@ -50,3 +50,12 @@ vim.keymap.set('n', '<leader>fd', telescope.lsp_definitions, {})
 -- nvim-tree
 local nvim_tree = require('nvim-tree.api')
 vim.keymap.set('n', '<leader>e', nvim_tree.tree.toggle, {})
+
+-- nvim-dap
+local dap = require('dap')
+vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, {})
+vim.keymap.set('n', '<leader>dc', dap.continue, {})
+vim.keymap.set('n', '<leader>d>', dap.step_over, {})
+vim.keymap.set('n', '<leader>d.', dap.step_into, {})
+vim.keymap.set('n', '<leader>d<', dap.step_out, {})
+vim.keymap.set('n', '<leader>di', dap.repl.open, {})

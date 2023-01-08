@@ -76,6 +76,9 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  -- nvim-dap: general debug adapter
+  use 'mfussenegger/nvim-dap'
+
   -- gitsigns: show git signs in editor
   use 'lewis6991/gitsigns.nvim'
 
