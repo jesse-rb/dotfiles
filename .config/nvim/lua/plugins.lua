@@ -53,6 +53,8 @@ return require('packer').startup(function(use)
     after = 'nvim-treesitter'
   }
 
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   -- autopair: auto pair that supports multiple characters
   use 'windwp/nvim-autopairs'
 
