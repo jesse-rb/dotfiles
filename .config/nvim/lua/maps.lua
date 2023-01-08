@@ -17,7 +17,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- buffers
 keymap.set('n', '<leader>]', ':bnext<CR>', { silent = true })
 keymap.set('n', '<leader>[', ':bprevious<CR>', { silent = true })
-keymap.set('n', '<leader>w', ':bd<CR>', { silent = true })
+keymap.set('n', '<leader>w', ':bd!<CR>', { silent = true })
 
 -- split window
 keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
@@ -58,4 +58,4 @@ vim.keymap.set('n', '<leader>dc', dap.continue, {})
 vim.keymap.set('n', '<leader>d>', dap.step_over, {})
 vim.keymap.set('n', '<leader>d.', dap.step_into, {})
 vim.keymap.set('n', '<leader>d<', dap.step_out, {})
-vim.keymap.set('n', '<leader>di', dap.repl.open, {})
+vim.keymap.set('n', '<leader>di', dap.repl.toggle, {})
