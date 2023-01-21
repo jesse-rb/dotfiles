@@ -8,6 +8,10 @@ sudo apt upgrade
 sudo apt install zsh
 chsh -s $(which zsh)
 
+# install hack nerd font (remember to enable manually in terminal profile)
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+./nerd-fonts/install.sh Hack
+
 # install oh-my-zsh framework for some nice plugins
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 mv .zshrc.pre-oh-my-zsh .zshrc # restore original .zshrc

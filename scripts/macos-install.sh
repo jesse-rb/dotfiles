@@ -10,6 +10,10 @@ xcode-select --install
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 
+# Install hack nerd font (remember to enable manually in terminal profile settings)
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
 # install oh-my-zsh framework for some nice plugins
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
