@@ -7,7 +7,7 @@ require("bufferline").setup {
   highlights = {
     separator_selected = {
       fg = '#292D3E',
-      bg = '#673800'
+      bg = '#424861'
     },
     separator_visible = {
       fg = '#292D3E',
@@ -26,8 +26,8 @@ require("bufferline").setup {
       bg = '#1B1E2B'
     },
     buffer_selected = {
-      fg = '#ffffff',
-      bg = '#673800'
+      fg = '#FFFFFF',
+      bg = '#424861'
     }
   }
 }
