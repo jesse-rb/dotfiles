@@ -1,5 +1,6 @@
 local dap, dapui = require('dap'), require('dapui')
 
+-- PHP config
 dap.adapters.php = {
     type = 'executable',
     command = 'node',
@@ -24,9 +25,28 @@ dap.configurations.php = {
     }
 }
 
+-- Go config
+dap.adapters.go = {
+  type = 'executable';
+  command = 'node';
+  args = { vim.fn.stdpath('data') .. '/mason/packages/go-debug-adapter/extension/dist/debugAdapter.js'};
+}
+dap.configurations.go = {
+  {
+    type = 'go';
+    name = 'Debug';
+    request = 'launch';
+    showLog = false;
+    program = "${file}";
+    dlvToolPath = vim.fn.exepath('dlv')
+  },
+}
+
+-- Setup dap extension plugins
 require('nvim-dap-virtual-text').setup()
 require('dapui').setup()
 
+-- Open/close dapui on dap events
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
