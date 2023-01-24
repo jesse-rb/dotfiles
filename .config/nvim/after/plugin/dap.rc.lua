@@ -12,7 +12,7 @@ dap.configurations.php = {
         type = 'php',
         request = 'launch',
         name = 'Listen for Xdebug',
-        port = 9003,
+        port = 9003
     },
     {
         type = 'php',
@@ -27,19 +27,22 @@ dap.configurations.php = {
 
 -- Go config
 dap.adapters.go = {
-  type = 'executable';
-  command = 'node';
-  args = { vim.fn.stdpath('data') .. '/mason/packages/go-debug-adapter/extension/dist/debugAdapter.js'};
+  type = 'executable',
+  command = 'node',
+  args = { vim.fn.stdpath('data') .. '/mason/packages/go-debug-adapter/extension/dist/debugAdapter.js'}
 }
 dap.configurations.go = {
   {
-    type = 'go';
-    name = 'Debug';
-    request = 'launch';
-    showLog = false;
-    program = "${file}";
+    type = 'go',
+    name = 'Debug',
+    request = 'launch',
+    showLog = false,
+    program = "${file}",
+    --dlvToolPath = { vim.fn.stdpath('data') .. '/mason/packages/delve/dlv' }
     dlvToolPath = vim.fn.exepath('dlv')
-  },
+    --dlvToolPath = { os.getenv('HOME') .. '/go/bin/dlv' }
+
+  }
 }
 
 -- Setup dap extension plugins
