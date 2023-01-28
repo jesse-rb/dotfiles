@@ -58,4 +58,7 @@ vim.keymap.set('n', '<leader>dc', dap.continue, {})
 vim.keymap.set('n', '<leader>d>', dap.step_over, {})
 vim.keymap.set('n', '<leader>d.', dap.step_into, {})
 vim.keymap.set('n', '<leader>d<', dap.step_out, {})
-vim.keymap.set('n', '<leader>di', dap.repl.toggle, {})
+
+-- dapui
+local dapui = require('dapui')
+vim.keymap.set('n', '<leader>dui', dapui.toggle, {})
