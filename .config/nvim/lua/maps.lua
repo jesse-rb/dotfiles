@@ -20,23 +20,18 @@ keymap.set('n', '<leader>[', ':bprevious<CR>', { silent = true })
 keymap.set('n', '<leader>w', ':bd!<CR>', { silent = true })
 
 -- split window
-keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+keymap.set('n', '<leader>ss', ':split<Return><C-w>w', { silent = true })
+keymap.set('n', '<leader>sv', ':vsplit<Return><C-w>w', { silent = true })
 -- move window
-keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', 's<left>', '<C-w>h')
-keymap.set('', 's<up>', '<C-w>k')
-keymap.set('', 's<down>', '<C-w>j')
-keymap.set('', 's<right>', '<C-w>l')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
+keymap.set('', '<leader>sh', '<C-w>h')
+keymap.set('', '<leader>sk', '<C-w>k')
+keymap.set('', '<leader>sj', '<C-w>j')
+keymap.set('', '<leader>sl', '<C-w>l')
 -- resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>-')
-keymap.set('n', '<C-w><down>', '<C-w>+')
+keymap.set('n', '<leader>s,', '<C-w><')
+keymap.set('n', '<leader>s.', '<C-w>>')
+keymap.set('n', '<leader>s-', '<C-w>-')
+keymap.set('n', '<leader>s=', '<C-w>+')
 
 -- telescope
 local telescope = require('telescope.builtin')
@@ -62,3 +57,6 @@ vim.keymap.set('n', '<leader>d<', dap.step_out, {})
 -- dapui
 local dapui = require('dapui')
 vim.keymap.set('n', '<leader>dui', dapui.toggle, {})
+
+-- diagnostics
+vim.keymap.set('n', '<leader>dg', vim.diagnostic.open_float, {})
