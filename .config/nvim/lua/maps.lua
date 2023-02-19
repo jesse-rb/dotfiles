@@ -60,3 +60,6 @@ vim.keymap.set('n', '<leader>dui', dapui.toggle, {})
 
 -- diagnostics
 vim.keymap.set('n', '<leader>dg', vim.diagnostic.open_float, {})
+
+-- In terminal mode, go to normal mode
+keymap.set('t', '<esc>', '<C-\\><C-n>')
