@@ -1,5 +1,14 @@
 local keymap = vim.keymap
 
+local r = function(x, s)
+	local t = {s}
+	for i = 0, x, 1 do
+		t[i] = s
+	end
+	local o = table.concat(t, '|')
+	return o
+end
+
 -- leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -28,10 +37,22 @@ keymap.set('', '<leader>sk', '<C-w>k')
 keymap.set('', '<leader>sj', '<C-w>j')
 keymap.set('', '<leader>sl', '<C-w>l')
 -- resize window
-keymap.set('n', '<leader>s,', '<C-w><')
-keymap.set('n', '<leader>s.', '<C-w>>')
-keymap.set('n', '<leader>s-', '<C-w>-')
-keymap.set('n', '<leader>s=', '<C-w>+')
+keymap.set('n', '<leader>s,', r(10, '<C-w><'))
+keymap.set('n', '<leader>s.', r(10, '<C-w>>'))
+keymap.set('n', '<leader>s-', r(10, '<C-w>-'))
+keymap.set('n', '<leader>s=', r(10, '<C-w>+'))
+keymap.set('n', '<leader>s,,', r(30, '<C-w><'))
+keymap.set('n', '<leader>s..', r(30, '<C-w>>'))
+keymap.set('n', '<leader>s--', r(30, '<C-w>-'))
+keymap.set('n', '<leader>s==', r(30, '<C-w>+'))
+keymap.set('n', '<leader>s,,,', r(100, '<C-w><'))
+keymap.set('n', '<leader>s...', r(100, '<C-w>>'))
+keymap.set('n', '<leader>s---', r(100, '<C-w>-'))
+keymap.set('n', '<leader>s===', r(100, '<C-w>+'))
+
+-- terminal in vertical mode
+keymap.set('n', '<leader>t', ':split<Return><C-w>w|:terminal<Return>', { silent = true })
+keymap.set('n', '<leader>tv', ':vsplit<Return><C-w>w|:terminal<Return>', { silent = true })
 
 -- telescope
 local telescope = require('telescope.builtin')
