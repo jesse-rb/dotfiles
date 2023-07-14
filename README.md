@@ -33,9 +33,12 @@ At this point all dotfiles should already be in place :D, no need to `mv` or `cp
 
 **install basics**
 
-5. run install script corresponding to your os, e.g. if on ubuntu then run 
+5. The available scripts are more for a list of commands to reference at the moment, and might not work properly if they are ran.
+
+e.g.
 ```
-run bash ~/scripts/ubuntu-install.sh
+cat ~/scripts/ubuntu-install.sh
+cat ~/scripts/macos-install.sh
 ```
 
 ## previews
