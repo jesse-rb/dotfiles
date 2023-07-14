@@ -33,13 +33,9 @@ At this point all dotfiles should already be in place :D, no need to `mv` or `cp
 
 **install basics**
 
-5. The available scripts are more for a list of commands to reference at the moment, and might not work properly if they are ran.
+5. The available scripts are more for a list of commands to reference at the moment, running them may not work properly. It is worth noting that sourcing `.zshrc` might complain with warnings until some things referenced in the install scripts have been installed
 
-e.g.
-```
-cat ~/scripts/ubuntu-install.sh
-cat ~/scripts/macos-install.sh
-```
+e.g. `cat ~/scripts/ubuntu-install.sh` or `cat ~/scripts/macos-install.sh`
 
 ## previews
 
