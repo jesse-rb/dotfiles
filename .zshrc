@@ -52,15 +52,6 @@ then
   source /etc/zsh_command_not_found
 fi
 
-# z cmd utility
-if [[ $OSTYPE == "linux"* ]] then
-  PATH_TO_Z="$HOME/z/z.sh"
-elif [[ $OSTYPE =~ "darwin"* ]] then
-  PATH_TO_Z="/opt/homebrew/etc/profile.d/z.sh"
-fi
-source $PATH_TO_Z
-
-
 # rbenv and ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

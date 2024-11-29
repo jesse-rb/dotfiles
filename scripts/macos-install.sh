@@ -47,5 +47,3 @@ brew install pyenv
 # install colorls ruby gem
 gem install colorls
 
-# install rupa/z cmd utility
-brew install z

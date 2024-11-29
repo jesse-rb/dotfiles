@@ -49,9 +49,6 @@ curl https://pyenv.run | bash
 curl -fLO https://go.dev/dl/go1.20.6.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.20.6.linux-amd64.tar.gz
 
-# clone rupa/z cmd utility
-git clone https://github.com/rupa/z.git
-
 source .zshrc
 
 # install ruby so that we can install ruby gems below
