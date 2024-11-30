@@ -1,3 +1,4 @@
+-- clipboard
 vim.g.clipboard = {
     name = 'WslClipboard',
     copy = {
@@ -10,3 +11,4 @@ vim.g.clipboard = {
     },
     cache_enabled = 0,
 }
+
