@@ -1,2 +1,2 @@
-require('jesse-rb.core')
-require('jesse-rb.lazy')
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
