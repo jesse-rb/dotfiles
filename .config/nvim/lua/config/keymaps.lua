@@ -5,9 +5,6 @@
 local map = vim.keymap.set
 
 -- Stop yanking stuff all the time!!
-map("n", "d", '"_d', { desc = "Delete without yanking!" })
-map("v", "d", '"_d', { desc = "Delete without yanking!" })
-
 map("n", "c", '"_c', { desc = "Change without yanking!" })
 map("v", "c", '"_c', { desc = "Change without yanking!" })
 
