@@ -25,3 +25,6 @@ end
 if is_wsl then
     require("jesse-rb.os.wsl")
 end
+
+require("jesse-rb.core.options")
+require("jesse-rb.core.keymaps")
