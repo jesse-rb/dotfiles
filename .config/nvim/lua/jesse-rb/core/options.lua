@@ -23,3 +23,11 @@ vim.opt.smoothscroll = true
 
 -- borders
 vim.opt.winborder = "single"
+
+-- tabline
+-- Always show the tabline (even if only one buffer is open)
+vim.o.showtabline = 2
+-- Tell Neovim to call our Lua function to draw the tabline
+-- %! means "evaluate this expression"
+-- v:lua lets Vimscript call Lua code
+vim.o.tabline = "%!v:lua.require'jesse-rb.core.tabline'.render()"

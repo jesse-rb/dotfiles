@@ -26,5 +26,25 @@ map("n", "<leader>co", ":e ~/.config/nvim/lua/jesse-rb/core/options.lua<CR>", { 
 -- snacks
 map('n', '<leader>e', function() Snacks.picker.explorer() end, { desc = 'Find Files' })
 map('n', '<leader>f', function() Snacks.picker.files() end, { desc = 'Find Files' })
-map('n', '<leader>b', function() Snacks.picker.buffers() end, { desc = 'Find Buffers' })
+map('n', '<leader>bs', function() Snacks.picker.buffers() end, { desc = 'Find Buffers' })
 map('n', '<leader>g', function() Snacks.picker.grep() end, { desc = 'Grep' })
+
+-- buffers
+map("n", "H", ":bprevious<CR>", { desc = "Previous buffer" })
+map("n", "L", ":bnext<CR>", { desc = "Next buffer", })
+map("n", "<leader>bd", ":bdelete<CR>", { desc = "Close buffer", })
+
+-- screens
+map("n", "-", "<C-w>s", { desc = "Horizontal split" })
+map("n", "|", "<C-w>v", { desc = "Vertical split" })
+
+
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left split" })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower split" })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper split" })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right split" })
+
+-- terminal
+vim.keymap.set("n", "<leader>tv", ":split<CR><C-w>j:terminal<CR>", { desc = "Open terminal in split" })
+-- Exit terminal insert mode to normal mode
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Terminal escape to normal mode" })
