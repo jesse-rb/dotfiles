@@ -1,9 +1,11 @@
 -- LSP configs
+-- see list of available lsp configs:
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
 -- lua
 vim.lsp.config('lua_ls', {
-  cmd = { "lua-language-server" },
-  filetypes = { "lua" },
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
     settings = {
         Lua = {
             runtime = {
@@ -21,16 +23,23 @@ vim.lsp.config('lua_ls', {
             telemetry = {
                 enable = false,
             },
-        }
-    }
+        },
+    },
 })
 
 -- golang
-vim.lsp.config('go_ls', {
-    cmd = { "gopls" },
-    filetypes = { "go" },
+vim.lsp.config('gopls', {})
+
+--typescript
+vim.lsp.config('ts_ls', {})
+
+-- svelte
+vim.lsp.config('svelte', {})
+
+-- Enable LSPs
+vim.lsp.enable({
+    'gopls',
+    'lua_ls',
+    'svelte',
+    'ts_ls',
 })
-
-vim.lsp.enable({ 'go_ls', 'lua_ls'})
-
-vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<CR>')

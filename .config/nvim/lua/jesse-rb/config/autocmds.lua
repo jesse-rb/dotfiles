@@ -32,7 +32,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
-
 -- Trigger auto complete suggestions
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)

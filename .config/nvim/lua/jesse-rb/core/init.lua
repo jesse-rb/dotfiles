@@ -16,6 +16,7 @@ if is_mac then
 end
 
 if is_win then
+    print("sorry")
 end
 
 if is_unix then
@@ -26,5 +27,18 @@ if is_wsl then
     require("jesse-rb.os.wsl")
 end
 
-require("jesse-rb.core.options")
-require("jesse-rb.core.keymaps")
+-- bootstrap lazy.nvim plugins
+require("jesse-rb.config.lazy")
+
+-- bootstrap lsp
+require("jesse-rb.config.lsp")
+
+-- bootstrap autogroups
+require("jesse-rb.config.autocmds")
+
+-- Bootsrap options and keymaps
+require("jesse-rb.config.options")
+require("jesse-rb.config.keymaps")
+
+-- Colorscheme
+vim.cmd [[colorscheme tokyonight]]

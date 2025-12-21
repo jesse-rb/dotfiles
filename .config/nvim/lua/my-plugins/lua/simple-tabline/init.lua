@@ -1,3 +1,4 @@
+-- Thank you gpt
 -- We create a table that will hold everything this module exports.
 -- Think of this like an object or namespace.
 local M = {}
@@ -44,6 +45,13 @@ function M.render()
 
     -- Neovim uses whatever string we return as the tabline
     return tabline
+end
+
+function M.setup()
+    -- Tell Neovim to call our Lua function to draw the tabline
+    -- %! means "evaluate this expression"
+    -- v:lua lets Vimscript call Lua code
+    vim.o.tabline = "%!v:lua.require'simple-tabline'.render()"
 end
 
 -- Return the module table so it can be required elsewhere
