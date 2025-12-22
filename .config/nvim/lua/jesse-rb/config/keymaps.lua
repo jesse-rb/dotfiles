@@ -57,7 +57,8 @@ end, { desc = "Open terminal in horizontal split" })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Terminal escape to normal mode" })
 
 -- lsp
-vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<CR>')
+vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<CR>', { desc = "Show diagnostic float" })
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { desc = "Go to definition" })
 
 -- Open diagnostic quickfix list
 vim.keymap.set("n", "<leader>d", function()
