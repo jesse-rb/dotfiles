@@ -17,6 +17,7 @@ vim.keymap.set("n", "<leader>co", ":e ~/.config/nvim/lua/jesse-rb/config/options
     { desc = "Open config: options" })
 
 -- snacks.nvim
+vim.keymap.set('n', '<leader>ft', function() Snacks.picker.files() end, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>ff', function() Snacks.picker.files() end, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fb', function() Snacks.picker.buffers() end, { desc = 'Find Buffers' })
 vim.keymap.set('n', '<leader>fg', function() Snacks.picker.grep() end, { desc = 'Grep' })
