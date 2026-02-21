@@ -57,3 +57,6 @@ rbenv global 3.2.2
 
 # install colorls cmd make pretty
 gem install colorls
+
+# install tmux
+sudo apt install tmux

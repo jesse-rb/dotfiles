@@ -47,3 +47,5 @@ brew install pyenv
 # install colorls ruby gem
 gem install colorls
 
+# install tmux
+brew install tmux
