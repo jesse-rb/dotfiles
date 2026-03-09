@@ -28,13 +28,16 @@ vim.lsp.config('lua_ls', {
 })
 
 -- golang
-vim.lsp.config('gopls', {})
+vim.lsp.config('gopls', {
+})
 
 --typescript
-vim.lsp.config('ts_ls', {})
+vim.lsp.config('ts_ls', {
+})
 
 -- svelte
-vim.lsp.config('svelte', {})
+vim.lsp.config('svelte', {
+})
 
 -- Enable LSPs
 vim.lsp.enable({

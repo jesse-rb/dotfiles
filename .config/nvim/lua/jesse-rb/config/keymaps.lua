@@ -16,11 +16,12 @@ vim.keymap.set("n", "<leader>ck", ":e ~/.config/nvim/lua/jesse-rb/config/keymaps
 vim.keymap.set("n", "<leader>co", ":e ~/.config/nvim/lua/jesse-rb/config/options.lua<CR>",
     { desc = "Open config: options" })
 
--- snacks.nvim
-vim.keymap.set('n', '<leader>ft', function() Snacks.picker.explorer() end, { desc = 'Toggle file tree' })
-vim.keymap.set('n', '<leader>ff', function() Snacks.picker.files() end, { desc = 'Find Files' })
-vim.keymap.set('n', '<leader>fb', function() Snacks.picker.buffers() end, { desc = 'Find Buffers' })
-vim.keymap.set('n', '<leader>fg', function() Snacks.picker.grep() end, { desc = 'Grep' })
+-- Telescope
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- buffers
 vim.keymap.set("n", "H", ":bprevious<CR>", { desc = "Previous buffer" })
@@ -68,3 +69,24 @@ end, { desc = 'Open diagnostics quickfix list' })
 
 -- notification history
 vim.keymap.set("n", "<leader>n", "<cmd>lua Snacks.notifier.show_history()<CR>", { desc = "Show notification history" })
+
+-- toggle quickfix list
+vim.keymap.set('n', '<leader>q', function()
+    local qf_open = false
+    for _, win in ipairs(vim.fn.getwininfo()) do
+        if win.quickfix == 1 then
+            qf_open = true
+            break
+        end
+    end
+    if qf_open then
+        vim.cmd('cclose')
+    else
+        vim.cmd('copen')
+    end
+end, { desc = 'Toggle quickfix list' })
+
+-- copy current buffer relative path
+vim.keymap.set("n", "<leader>crp", ":let @+ = expand(\"%:.\")<CR>", {
+    noremap = true, silent = true, desc = 'Copy current buffer relative file path'
+})
