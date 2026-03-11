@@ -26,8 +26,6 @@ vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Telesco
 -- buffers
 vim.keymap.set("n", "H", ":bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "L", ":bnext<CR>", { desc = "Next buffer", })
-vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close buffer", })
-vim.keymap.set("n", "<leader>bo", ":%bd|e#<CR>", { desc = "Close all other buffers", })
 
 -- windows
 vim.keymap.set("n", "-", "<C-w>s", { desc = "Horizontal split" })
