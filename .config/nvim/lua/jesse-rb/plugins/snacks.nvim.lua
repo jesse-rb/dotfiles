@@ -8,7 +8,7 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         zen = {
-            enabled = true
+            enabled = true,
         },
         bigfile = { enabled = true },
         indent = { enabled = true },
@@ -24,8 +24,16 @@ return {
         quickfile = { enabled = false },
     },
 
-    vim.keymap.set("n", "<leader>bz", function() Snacks.zen() end, { desc = "Toggle buffer zen mode" }),
-    vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete.delete() end, { desc = "Delete current buffer" }),
-    vim.keymap.set("n", "<leader>ba", function() Snacks.bufdelete.all() end, { desc = "Delete all buffers" }),
-    vim.keymap.set("n", "<leader>bo", function() Snacks.bufdelete.other() end, { desc = "Delete all OTHER buffers" }),
+    vim.keymap.set("n", "<leader>bz", function()
+        Snacks.zen()
+    end, { desc = "Toggle buffer zen mode" }),
+    vim.keymap.set("n", "<leader>bd", function()
+        Snacks.bufdelete.delete()
+    end, { desc = "Delete current buffer" }),
+    vim.keymap.set("n", "<leader>ba", function()
+        Snacks.bufdelete.all()
+    end, { desc = "Delete all buffers" }),
+    vim.keymap.set("n", "<leader>bo", function()
+        Snacks.bufdelete.other()
+    end, { desc = "Delete all OTHER buffers" }),
 }

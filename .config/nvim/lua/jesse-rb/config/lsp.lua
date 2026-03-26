@@ -2,8 +2,12 @@
 -- see list of available lsp configs:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
+vim.lsp.config["*"] = {
+    capabilities = require("blink.cmp").get_lsp_capabilities(),
+}
+
 -- lua
-vim.lsp.config('lua_ls', {
+vim.lsp.config("lua_ls", {
     cmd = { "lua-language-server" },
     filetypes = { "lua" },
     settings = {
@@ -28,21 +32,26 @@ vim.lsp.config('lua_ls', {
 })
 
 -- golang
-vim.lsp.config('gopls', {
-})
+vim.lsp.config("gopls", {})
 
 --typescript
-vim.lsp.config('ts_ls', {
-})
+vim.lsp.config("ts_ls", {})
 
 -- svelte
-vim.lsp.config('svelte', {
-})
+vim.lsp.config("svelte", {})
+
+-- tailwind
+vim.lsp.config("tailwindcss", {})
+
+-- terraform
+vim.lsp.config("terraformls", {})
 
 -- Enable LSPs
 vim.lsp.enable({
-    'gopls',
-    'lua_ls',
-    'svelte',
-    'ts_ls',
+    "gopls",
+    "lua_ls",
+    "svelte",
+    "ts_ls",
+    "tailwindcss",
+    "terraformls",
 })

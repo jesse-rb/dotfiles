@@ -39,6 +39,7 @@ require("jesse-rb.config.autocmds")
 -- Bootsrap options and keymaps
 require("jesse-rb.config.options")
 require("jesse-rb.config.keymaps")
+-- require("jesse-rb.config.statusline")
 
 -- Colorscheme
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight-moon]])

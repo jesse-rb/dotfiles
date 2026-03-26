@@ -1,0 +1,15 @@
+# Prefer double quotes for strings
+quote_style = "AutoPreferDouble"
+
+# Remove unnecessary parentheses in function calls
+call_parentheses = "Always"
+
+# Use spaces for indentation
+indent_type = "Spaces"
+indent_width = 4
+
+# Maximum line width before wrapping
+column_width = 100
+
+# Align table entries nicely
+line_endings = "Unix"
