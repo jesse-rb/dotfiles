@@ -12,39 +12,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- Format on save for LSPs such as gopls
--- Add an autocmd that fires when an LSP client attaches to a buffer
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = augroup("lsp_format_on_save"),
-    callback = function(args)
-        -- Attach a second autocmd specifically for this buffer (args.buf)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = args.buf, -- Only runs for the current buffer
-            callback = function()
-                vim.lsp.buf.format({
-                    async = false, -- Ensures formatting completes before saving
-                    bufnr = args.buf,
-                    -- Optional: Filter to use a specific LSP client if multiple are attached
-                    -- filter = function(client) return client.name == "your_lsp_server_name" end
-                })
-            end,
-        })
-    end,
-})
-
--- Format on save for Lua files StyLua
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "*.lua",
-    callback = function()
-        local file = vim.fn.expand("%:p")
-        vim.fn.jobstart({ "stylua", file }, {
-            on_exit = function()
-                vim.cmd("edit!")
-            end,
-        })
-    end,
-})
-
 -- Trigger auto complete suggestions
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)

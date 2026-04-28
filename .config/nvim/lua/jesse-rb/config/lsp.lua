@@ -46,12 +46,28 @@ vim.lsp.config("tailwindcss", {})
 -- terraform
 vim.lsp.config("terraformls", {})
 
+-- html
+vim.lsp.config("html", {})
+
+-- css
+vim.lsp.config("cssls", {})
+
+-- eslint
+vim.lsp.config("eslint", {})
+
+-- jsonls
+vim.lsp.config("jsonls", {})
+
 -- Enable LSPs
 vim.lsp.enable({
+    "html",
+    "cssls",
     "gopls",
     "lua_ls",
     "svelte",
     "ts_ls",
     "tailwindcss",
     "terraformls",
+    "eslint",
+    "jsonls",
 })
