@@ -58,6 +58,9 @@ vim.lsp.config("eslint", {})
 -- jsonls
 vim.lsp.config("jsonls", {})
 
+--emmet
+vim.lsp.config("emmet_language_server", {})
+
 -- Enable LSPs
 vim.lsp.enable({
     "html",
@@ -70,4 +73,5 @@ vim.lsp.enable({
     "terraformls",
     "eslint",
     "jsonls",
+    "emmet_language_server",
 })
