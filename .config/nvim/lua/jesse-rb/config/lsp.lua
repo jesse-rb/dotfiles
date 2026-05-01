@@ -61,6 +61,18 @@ vim.lsp.config("jsonls", {})
 --emmet
 vim.lsp.config("emmet_language_server", {})
 
+-- basedpyright (python lsp)
+vim.lsp.config("basedpyright", {
+    settings = {
+        basedpyright = {
+            disableOrganizeImports = true, -- We will let ruff handle linting/formatting, and organise imports
+        },
+    },
+})
+
+-- ruff (python formatting and linting)
+vim.lsp.config("ruff", {})
+
 -- Enable LSPs
 vim.lsp.enable({
     "html",
@@ -74,4 +86,6 @@ vim.lsp.enable({
     "eslint",
     "jsonls",
     "emmet_language_server",
+    "basedpyright",
+    "ruff",
 })
