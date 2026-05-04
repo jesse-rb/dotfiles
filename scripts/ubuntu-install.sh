@@ -42,8 +42,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
-# install pyenv
-curl https://pyenv.run | bash
+# install uv for python dev
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # install go
 curl -fLO https://go.dev/dl/go1.20.6.linux-amd64.tar.gz

@@ -68,14 +68,12 @@ elif [[ $OSTYPE == "darwin"* ]] then
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
 # golang
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# uv
+. "$HOME/.local/bin/env"
 
 ### ALIAS
 
@@ -84,6 +82,3 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # colorls
 alias cl='colorls'
-
-# laravel sail
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'

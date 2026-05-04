@@ -41,8 +41,8 @@ rbenv init
 rbenv install 3.1.3
 rbenv global 3.1.3
 
-# install pyenv
-brew install pyenv
+# install uv for python dev
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # install colorls ruby gem
 gem install colorls
