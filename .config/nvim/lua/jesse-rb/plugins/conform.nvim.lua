@@ -10,6 +10,7 @@ return {
             css = { "prettier" },
             html = { "prettier" },
             json = { "prettier" },
+            php = { "pint" },
             -- python = { "ruff_format", "ruff_organize_imports" },
         },
         format_on_save = {

@@ -72,6 +72,10 @@ fi
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+# dotnet
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH"  # note: $HOME/.dotnet is BEFORE $PATH this time
+
 # uv
 . "$HOME/.local/bin/env"
 

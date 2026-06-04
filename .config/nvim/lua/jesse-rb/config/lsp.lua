@@ -73,6 +73,23 @@ vim.lsp.config("basedpyright", {
 -- ruff (python formatting and linting)
 vim.lsp.config("ruff", {})
 
+-- roslyn (c#)
+vim.lsp.config("roslyn", {})
+
+-- intelephense (php lsp)
+vim.lsp.config("intelephense", {
+    -- settings = {
+    --     intelephense = {
+    --         telemetry = false
+    --     }
+    --     environment = {
+    --         includePaths = {
+    --
+    --         }
+    --     }
+    -- }
+})
+
 -- Enable LSPs
 vim.lsp.enable({
     "html",
@@ -88,4 +105,6 @@ vim.lsp.enable({
     "emmet_language_server",
     "basedpyright",
     "ruff",
+    "roslyn",
+    "intelephense"
 })
