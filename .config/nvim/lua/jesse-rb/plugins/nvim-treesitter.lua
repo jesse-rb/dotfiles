@@ -17,6 +17,8 @@ return {
                 "typescript",
                 "svelte",
                 "go",
+                "php",
+                "phpdoc",
             },
             highlight = { enable = true },
             indent = { enable = true },
