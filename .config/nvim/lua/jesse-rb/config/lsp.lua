@@ -106,5 +106,5 @@ vim.lsp.enable({
     "basedpyright",
     "ruff",
     "roslyn",
-    "intelephense"
+    "intelephense",
 })

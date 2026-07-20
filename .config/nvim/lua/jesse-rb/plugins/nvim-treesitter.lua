@@ -21,7 +21,7 @@ return {
                 "phpdoc",
             },
             highlight = { enable = true },
-            indent = { enable = true },
+            indent = { enable = true, disable = { "tsx", "jsx" } },
         })
     end,
 }
