@@ -1,27 +1,45 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master", -- Cannot figure out how to get new main branch rewrite to work :(
+    branch = "main",
     build = ":TSUpdate",
     lazy = false,
     config = function()
-        require("nvim-treesitter.configs").setup({
-            auto_install = true,
-            ensure_installed = {
-                "vim",
-                "markdown",
-                "bash",
-                "lua",
-                "html",
-                "css",
-                "javascript",
-                "typescript",
-                "svelte",
-                "go",
-                "php",
-                "phpdoc",
-            },
-            highlight = { enable = true },
-            indent = { enable = true, disable = { "tsx", "jsx" } },
+        local ts = require("nvim-treesitter")
+        local parsers = {
+            "vim",
+            "markdown",
+            "bash",
+            "lua",
+            "html",
+            "css",
+            "javascript",
+            "typescript",
+            "svelte",
+            "go",
+            "php",
+            "phpdoc",
+        }
+        for _, parser in ipairs(parsers) do
+            ts.install(parser)
+        end
+
+        -- Try to match filetype with parser
+        local patterns = {}
+        for _, parser in ipairs(parsers) do
+            local parser_patterns = vim.treesitter.language.get_filetypes(parser)
+            for _, pp in pairs(parser_patterns) do
+                table.insert(patterns, pp)
+            end
+        end
+
+        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        vim.wo[0][0].foldmethod = "expr"
+
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = patterns,
+            callback = function()
+                vim.treesitter.start()
+            end,
         })
     end,
 }
