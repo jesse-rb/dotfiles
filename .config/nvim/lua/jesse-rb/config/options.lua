@@ -1,6 +1,8 @@
 -- Useful defaults reference from LazyVim: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 --                               and from: https://github.com/radleylewis/nvim-lite/blob/master/init.lua
 
+vim.opt.foldlevel = 99
+
 -- set telescope
 vim.g.lazyvim_picker = "telescope"
 
